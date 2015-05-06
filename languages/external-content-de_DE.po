@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: External Content v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-05-06 18:11:13+0000\n"
+"Last-Translator: Thorsten Frommen <tf@ipm-frommen.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#. translators: plugin header field 'Name'
+#: external-content.php:0
+#@ external-content
+msgid "External Content"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: external-content.php:0
+#@ external-content
+msgid "https://github.com/tfrommen/external-content"
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: external-content.php:0
+#@ external-content
+msgid "Thorsten Frommen"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: external-content.php:0
+#@ external-content
+msgid "http://ipm-frommen.de/wordpress"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: external-content.php:0
+#@ external-content
+msgid "1.0"
+msgstr ""
+
+#: inc/Model/MetaBox.php:64
+#@ external-content
+msgid "URL"
+msgstr "URL"
+
+#: inc/Model/PostType.php:52
+#@ external-content
+msgctxt "Post type general name"
+msgid "External Content"
+msgstr "Externe Inhalte"
+
+#: inc/Model/PostType.php:53
+#@ external-content
+msgctxt "Post type singular name"
+msgid "External Content"
+msgstr "Externer Inhalt"
+
+#: inc/Model/PostType.php:54
+#@ external-content
+msgctxt "Post type menu name"
+msgid "External Content"
+msgstr "Externe Inhalte"
+
+#: inc/Model/PostType.php:55
+#@ external-content
+msgctxt "Post type admin bar name"
+msgid "External Content"
+msgstr "Externer Inhalt"
+
+#: inc/Model/PostType.php:56
+#@ external-content
+msgid "All External Content"
+msgstr "Alle externen Inhalte"
+
+#: inc/Model/PostType.php:57
+#@ external-content
+msgctxt "Add new post"
+msgid "Add New"
+msgstr "Erstellen"
+
+#: inc/Model/PostType.php:58
+#@ external-content
+msgid "Add New External Content"
+msgstr "Externen Inhalt erstellen"
+
+#: inc/Model/PostType.php:59
+#@ external-content
+msgid "Edit External Content"
+msgstr "Externen Inhalt bearbeiten"
+
+#: inc/Model/PostType.php:60
+#@ external-content
+msgid "New External Content"
+msgstr "Neuer externer Inhalt"
+
+#: inc/Model/PostType.php:61
+#@ external-content
+msgid "View External Content"
+msgstr "Externen Inhalt ansehen"
+
+#: inc/Model/PostType.php:62
+#@ external-content
+msgid "Search External Content"
+msgstr "Externe Inhalte suchen"
+
+#: inc/Model/PostType.php:63
+#@ external-content
+msgid "No External Content found."
+msgstr "Keine externen Inhalte gefunden."
+
+#: inc/Model/PostType.php:64
+#@ external-content
+msgid "No External Content found in Trash."
+msgstr "Keine externen Inhalte im Papierkorb gefunden."
+
+#: inc/Model/PostType.php:65
+#@ external-content
+msgid "Parent External Content:"
+msgstr "Übergeordneter externer Inhalt:"
+
+#: inc/View/MetaBox.php:53
+#@ external-content
+msgid "Please enter the URL of the external content."
+msgstr "Bitte gib die URL des externen Inhalts ein."
+
+#: inc/View/MetaBox.php:60
+#@ external-content
+msgid "External URL"
+msgstr "Externe URL"
+
+#. translators: plugin header field 'Description'
+#: external-content.php:0
+#@ external-content
+msgid "This plugin registers a custom post type to handle external content like any other post. The post permalink is replaced by a custom post meta that holds an external URL."
+msgstr "Dieses Plugin registriert einen Custom Post Type, um externe Inhalte wie normale Posts pflegen zu können. Der Permalink wird durch ein neues Postmeta ersetzt, welches eine externe URL beinhaltet."
+
