@@ -22,8 +22,6 @@ class Post {
 	/**
 	 * Constructor. Set up the properties.
 	 *
-	 * @see tf\ExternalContent\Plugin::initialize()
-	 *
 	 * @param PostType $post_type Post type model.
 	 * @param MetaBox  $meta_box  Meta box model.
 	 */

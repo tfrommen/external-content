@@ -20,8 +20,6 @@ class Plugin {
 	/**
 	 * Constructor. Set up the properties.
 	 *
-	 * @see initialize()
-	 *
 	 * @param string $file Main plugin file.
 	 */
 	public function __construct( $file ) {
@@ -31,8 +29,6 @@ class Plugin {
 
 	/**
 	 * Initialize the plugin.
-	 *
-	 * @see initialize()
 	 *
 	 * @return void
 	 */

@@ -17,8 +17,6 @@ class TextDomain {
 	/**
 	 * Constructor. Set up the properties.
 	 *
-	 * @see tf\ExternalContent\Plugin::initialize()
-	 *
 	 * @param string $file Main plugin file.
 	 */
 	public function __construct( $file ) {
@@ -29,8 +27,6 @@ class TextDomain {
 
 	/**
 	 * Load the text domain.
-	 *
-	 * @see tf\ExternalContent\Controller\TextDomain::initialize()
 	 *
 	 * @return void
 	 */

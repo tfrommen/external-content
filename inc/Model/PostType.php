@@ -16,8 +16,6 @@ class PostType {
 
 	/**
 	 * Constructor. Set up the properties.
-	 *
-	 * @see tf\ExternalContent\Plugin::initialize()
 	 */
 	public function __construct() {
 
@@ -112,8 +110,6 @@ class PostType {
 
 	/**
 	 * Remove the Slug meta box.
-	 *
-	 * @see register()
 	 *
 	 * @return void
 	 */

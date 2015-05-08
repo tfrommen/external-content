@@ -25,8 +25,6 @@ class MetaBox {
 	/**
 	 * Constructor. Set up the properties.
 	 *
-	 * @see tf\ExternalContent\Plugin::initialize()
-	 *
 	 * @param Model $model Model.
 	 */
 	public function __construct( Model $model ) {

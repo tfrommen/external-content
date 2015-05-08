@@ -19,8 +19,6 @@ class Post {
 	/**
 	 * Constructor. Set up the properties.
 	 *
-	 * @see tf\ExternalContent\Plugin::initialize()
-	 *
 	 * @param Model $model Model.
 	 */
 	public function __construct( Model $model ) {
@@ -30,8 +28,6 @@ class Post {
 
 	/**
 	 * Wire up all functions.
-	 *
-	 * @see tf\ExternalContent\Plugin::initialize()
 	 *
 	 * @return void
 	 */

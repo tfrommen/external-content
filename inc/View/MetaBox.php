@@ -25,8 +25,6 @@ class MetaBox {
 	/**
 	 * Constructor. Set up the properties.
 	 *
-	 * @see tf\ExternalContent\MetaBox::initialize()
-	 *
 	 * @param Model $model Model.
 	 * @param Nonce $nonce Nonce object.
 	 */
