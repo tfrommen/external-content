@@ -1,13 +1,18 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Model;
+namespace tf\ExternalContent\Models;
 
 /**
  * Class TextDomain
  *
- * @package tf\ExternalContent\Model
+ * @package tf\ExternalContent\Models
  */
 class TextDomain {
+
+	/**
+	 * @var string
+	 */
+	private $domain = 'external-content';
 
 	/**
 	 * @var string
@@ -28,11 +33,11 @@ class TextDomain {
 	/**
 	 * Load the text domain.
 	 *
-	 * @return void
+	 * @return bool
 	 */
 	public function load() {
 
-		load_plugin_textdomain( 'external-content', FALSE, $this->path );
+		return load_plugin_textdomain( $this->domain, FALSE, $this->path );
 	}
 
 }

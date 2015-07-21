@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Model;
+namespace tf\ExternalContent\Models;
 
 /**
  * Class Post
  *
- * @package tf\ExternalContent\Model
+ * @package tf\ExternalContent\Models
  */
 class Post {
 
@@ -28,6 +28,7 @@ class Post {
 	public function __construct( PostType $post_type, MetaBox $meta_box ) {
 
 		$this->meta_key = $meta_box->get_meta_key();
+
 		$this->post_type = $post_type->get_post_type();
 	}
 
@@ -51,7 +52,7 @@ class Post {
 		}
 
 		/**
-		 * Customize the usage of the external URL as permalink.
+		 * Filter the usage of the external URL as permalink.
 		 *
 		 * @param bool $use_external_url Use the external URL as permalink?
 		 */

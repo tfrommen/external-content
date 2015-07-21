@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Model;
+namespace tf\ExternalContent\Models;
 
 /**
  * Class PostType
  *
- * @package tf\ExternalContent\Model
+ * @package tf\ExternalContent\Models
  */
 class PostType {
 
@@ -20,7 +20,7 @@ class PostType {
 	public function __construct() {
 
 		/**
-		 * Customize the post type.
+		 * Filter the post type.
 		 *
 		 * @param string $post_type Post type.
 		 */
@@ -63,7 +63,7 @@ class PostType {
 			'parent_item_colon'  => __( 'Parent External Content:', 'external-content' ),
 		);
 		/**
-		 * Customize the post type labels.
+		 * Filter the post type labels.
 		 *
 		 * @param array $labels Post type labels.
 		 */
@@ -76,7 +76,7 @@ class PostType {
 			'thumbnail',
 		);
 		/**
-		 * Customize the post type supports.
+		 * Filter the post type supports.
 		 *
 		 * @param array $supports Post type supports.
 		 */
@@ -99,7 +99,7 @@ class PostType {
 			'rewrite'              => FALSE,
 		);
 		/**
-		 * Customize the post type args.
+		 * Filter the post type args.
 		 *
 		 * @param array $args Post type args.
 		 */

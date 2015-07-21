@@ -1,15 +1,15 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Controller;
+namespace tf\ExternalContent\Controllers;
 
-use tf\ExternalContent\Model\Post as Model;
+use tf\ExternalContent\Models\PostType as Model;
 
 /**
- * Class Post
+ * Class PostType
  *
- * @package tf\ExternalContent\Controller
+ * @package tf\ExternalContent\Controllers
  */
-class Post {
+class PostType {
 
 	/**
 	 * @var Model
@@ -33,8 +33,7 @@ class Post {
 	 */
 	public function initialize() {
 
-		add_filter( 'post_type_link', array( $this->model, 'get_external_url' ), 10, 2 );
-		add_filter( 'pre_get_shortlink', array( $this->model, 'get_shortlink' ), 10, 3 );
+		add_action( 'wp_loaded', array( $this->model, 'register' ) );
 	}
 
 }

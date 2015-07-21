@@ -30,7 +30,7 @@ If you want to alter a specific post type argument but you can't find a fitting 
 
 `
 /**
- * Customize the post type args.
+ * Filter the post type args.
  *
  * @param array $args Post type args.
  */
@@ -49,7 +49,7 @@ The post type description can be customized by using the `external_content_descr
 
 `
 /**
- * Customize the post type description.
+ * Filter the post type description.
  *
  * @param string $description Post type description.
  */
@@ -66,7 +66,7 @@ In case you don't like the labels, easily adapt them to your liking.
 
 `
 /**
- * Customize the post type labels.
+ * Filter the post type labels.
  *
  * @param array $labels Post type labels.
  */
@@ -85,7 +85,7 @@ If you want to alter the meta key for the external URL, feel free to do it via t
 
 `
 /**
- * Customize the meta key.
+ * Filter the meta key.
  *
  * @param string $meta_key Meta key.
  */
@@ -102,7 +102,7 @@ Yes, you can also alter the post type (slug).
 
 `
 /**
- * Customize the post type.
+ * Filter the post type.
  *
  * @param string $post_type Post type.
  */
@@ -118,7 +118,7 @@ This filter provides you with the the post type supports.
 
 `
 /**
- * Customize the post type supports.
+ * Filter the post type supports.
  *
  * @param array $supports Post type supports.
  */
@@ -141,7 +141,7 @@ The permalink of external content is, by default, replaced with the post's accor
 
 `
 /**
- * Customize the usage of the external URL as permalink.
+ * Filter the usage of the external URL as permalink.
  *
  * @param bool $use_external_url Use the external URL as permalink?
  */
@@ -166,9 +166,12 @@ This plugin requires PHP 5.3.
 
 == Changelog ==
 
+= 1.2 =
+* Complete refactor.
+
 = 1.1 =
-* wordpress.org release
-* compatible up to WordPress 4.2.2
+* wordpress.org release.
+* Compatible up to WordPress 4.2.2.
 
 = 1.0 =
-* initial release
+* Initial release.

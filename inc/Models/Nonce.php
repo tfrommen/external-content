@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Model;
+namespace tf\ExternalContent\Models;
 
 /**
  * Class Nonce
  *
- * @package tf\ExternalContent\Model
+ * @package tf\ExternalContent\Models
  */
 class Nonce {
 
@@ -28,6 +28,7 @@ class Nonce {
 	public function __construct( $action, $name = '' ) {
 
 		$this->action = $action;
+
 		$this->name = empty( $name ) ? $action . '_nonce' : $name;
 	}
 

@@ -2,9 +2,6 @@
 
 namespace tf\ExternalContent;
 
-use tf\ExternalContent\Controller;
-use tf\ExternalContent\Model;
-
 /**
  * Class Plugin
  *
@@ -34,19 +31,22 @@ class Plugin {
 	 */
 	public function initialize() {
 
-		$text_domain = new Model\TextDomain( $this->file );
+		$text_domain = new Models\TextDomain( $this->file );
 		$text_domain->load();
 
-		$post_type = new Model\PostType();
-		$post_type_controller = new Controller\PostType( $post_type );
+		$nonce = new Models\Nonce( 'save_external_url' );
+
+		$post_type = new Models\PostType();
+		$post_type_controller = new Controllers\PostType( $post_type );
 		$post_type_controller->initialize();
 
-		$meta_box = new Model\MetaBox( $post_type );
-		$meta_box_controller = new Controller\MetaBox( $meta_box );
+		$meta_box = new Models\MetaBox( $post_type, $nonce );
+		$meta_box_view = new Views\MetaBox( $meta_box, $post_type, $nonce );
+		$meta_box_controller = new Controllers\MetaBox( $meta_box, $meta_box_view );
 		$meta_box_controller->initialize();
 
-		$post = new Model\Post( $post_type, $meta_box );
-		$post_controller = new Controller\Post( $post );
+		$post = new Models\Post( $post_type, $meta_box );
+		$post_controller = new Controllers\Post( $post );
 		$post_controller->initialize();
 	}
 

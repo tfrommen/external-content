@@ -1,9 +1,9 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\View;
+namespace tf\ExternalContent\Views;
 
-use tf\ExternalContent\Model\MetaBox as Model;
-use tf\ExternalContent\Model\Nonce;
+use tf\ExternalContent\Models\MetaBox as Model;
+use tf\ExternalContent\Models;
 
 /**
  * Class MetaBox
@@ -18,20 +18,49 @@ class MetaBox {
 	private $meta_key;
 
 	/**
-	 * @var Nonce
+	 * @var Models\Nonce
 	 */
 	private $nonce;
 
 	/**
 	 * Constructor. Set up the properties.
 	 *
-	 * @param Model $model Model.
-	 * @param Nonce $nonce Nonce object.
+	 * @param Model           $model     Model.
+	 * @param Models\PostType $post_type Post type model.
+	 * @param Models\Nonce    $nonce     Nonce model.
 	 */
-	public function __construct( Model $model, Nonce $nonce ) {
+	public function __construct( Model $model, Models\PostType $post_type, Models\Nonce $nonce ) {
 
 		$this->meta_key = $model->get_meta_key();
+
+		$this->post_type = $post_type->get_post_type();
+
 		$this->nonce = $nonce;
+	}
+
+	/**
+	 * Add the meta box to the according post types.
+	 *
+	 * @wp-hook add_meta_boxes
+	 *
+	 * @param string $post_type Post type slug.
+	 *
+	 * @return void
+	 */
+	public function add( $post_type ) {
+
+		if ( $post_type !== $this->post_type ) {
+			return;
+		}
+
+		add_meta_box(
+			'external_content_url',
+			__( 'URL', 'external-content' ),
+			array( $this, 'render' ),
+			$post_type,
+			'advanced',
+			'high'
+		);
 	}
 
 	/**

@@ -1,14 +1,13 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Model;
+namespace tf\ExternalContent\Models;
 
-use tf\ExternalContent\Model\PostType as Model;
-use tf\ExternalContent\View;
+use tf\ExternalContent\Views;
 
 /**
  * Class MetaBox
  *
- * @package tf\ExternalContent\View
+ * @package tf\ExternalContent\Models
  */
 class MetaBox {
 
@@ -25,46 +24,22 @@ class MetaBox {
 	/**
 	 * Constructor. Set up the properties.
 	 *
-	 * @param Model $model Model.
+	 * @param PostType $post_type Post type model.
+	 * @param Nonce    $nonce     Nonce model.
 	 */
-	public function __construct( Model $model ) {
+	public function __construct( PostType $post_type, Nonce $nonce ) {
+
+		$this->post_type = $post_type->get_post_type();
+
+		$this->nonce = $nonce;
 
 		/**
-		 * Customize the meta key.
+		 * Filter the meta key.
 		 *
 		 * @param string $meta_key Meta key.
 		 */
 		$this->meta_key = (string) apply_filters( 'external_content_meta_key', '_external_content' );
 		$this->meta_key = esc_attr( $this->meta_key );
-
-		$this->nonce = new Nonce( 'external_content_url' );
-
-		$this->post_type = $model->get_post_type();
-	}
-
-	/**
-	 * Add the meta box to the according post types.
-	 *
-	 * @wp-hook add_meta_boxes
-	 *
-	 * @param string $post_type Post type slug.
-	 *
-	 * @return void
-	 */
-	public function add( $post_type ) {
-
-		if ( $post_type !== $this->post_type ) {
-			return;
-		}
-
-		add_meta_box(
-			'external_content_url',
-			__( 'URL', 'external-content' ),
-			array( new View\MetaBox( $this, $this->nonce ), 'render' ),
-			$post_type,
-			'advanced',
-			'high'
-		);
 	}
 
 	/**
