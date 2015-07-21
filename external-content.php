@@ -1,7 +1,7 @@
 <?php # -*- coding: utf-8 -*-
 /**
  * Plugin Name: External Content
- * Plugin URI:  https://github.com/tfrommen/external-content
+ * Plugin URI:  https://wordpress.org/plugins/external-content/
  * Description: This plugin registers a custom post type to handle external content like any other post. The post permalink is replaced by a custom post meta that holds an external URL.
  * Author:      Thorsten Frommen
  * Author URI:  http://ipm-frommen.de/wordpress
