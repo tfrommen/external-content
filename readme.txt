@@ -3,7 +3,7 @@ Contributors: ipm-frommen
 Donate link: http://ipm-frommen.de/wordpress
 Tags: external, content, url
 Requires at least: 2.9.0
-Tested up to: 4.2.2
+Tested up to: 4.2.3
 Stable tag: trunk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -114,7 +114,7 @@ add_filter( 'external_content_post_type', function() {
 
 **`external_content_supports`**
 
-This filter provides you with the the post type supports.
+This filter provides you with the post type supports.
 
 `
 /**
@@ -168,6 +168,7 @@ This plugin requires PHP 5.3.
 
 = 1.2 =
 * Complete refactor.
+* Compatible up to WordPress 4.2.3.
 
 = 1.1 =
 * wordpress.org release.
