@@ -3,7 +3,7 @@ Contributors: ipm-frommen
 Donate link: http://ipm-frommen.de/wordpress
 Tags: external, content, url
 Requires at least: 2.9.0
-Tested up to: 4.2.3
+Tested up to: 4.2.4
 Stable tag: trunk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -166,13 +166,17 @@ This plugin requires PHP 5.3.
 
 == Changelog ==
 
-= 1.2 =
+= 1.2.1 =
+* Escape translated strings.
+* Compatible up to WordPress 4.2.4.
+
+= 1.2.0 =
 * Complete refactor.
 * Compatible up to WordPress 4.2.3.
 
-= 1.1 =
+= 1.1.0 =
 * wordpress.org release.
 * Compatible up to WordPress 4.2.2.
 
-= 1.0 =
+= 1.0.0 =
 * Initial release.

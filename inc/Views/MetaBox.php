@@ -3,7 +3,8 @@
 namespace tf\ExternalContent\Views;
 
 use tf\ExternalContent\Models\MetaBox as Model;
-use tf\ExternalContent\Models;
+use tf\ExternalContent\Models\Nonce as NonceModel;
+use tf\ExternalContent\Models\PostType as PostTypeModel;
 
 /**
  * Class MetaBox
@@ -18,18 +19,18 @@ class MetaBox {
 	private $meta_key;
 
 	/**
-	 * @var Models\Nonce
+	 * @var NonceModel
 	 */
 	private $nonce;
 
 	/**
 	 * Constructor. Set up the properties.
 	 *
-	 * @param Model           $model     Model.
-	 * @param Models\PostType $post_type Post type model.
-	 * @param Models\Nonce    $nonce     Nonce model.
+	 * @param Model         $model     Model.
+	 * @param PostTypeModel $post_type Post type model.
+	 * @param NonceModel    $nonce     Nonce model.
 	 */
-	public function __construct( Model $model, Models\PostType $post_type, Models\Nonce $nonce ) {
+	public function __construct( Model $model, PostTypeModel $post_type, NonceModel $nonce ) {
 
 		$this->meta_key = $model->get_meta_key();
 
@@ -55,7 +56,7 @@ class MetaBox {
 
 		add_meta_box(
 			'external_content_url',
-			__( 'URL', 'external-content' ),
+			esc_html__( 'URL', 'external-content' ),
 			array( $this, 'render' ),
 			$post_type,
 			'advanced',
@@ -77,14 +78,14 @@ class MetaBox {
 		$this->nonce->print_field();
 		?>
 		<p>
-			<?php _e( 'Please enter the URL of the external content.', 'external-content' ); ?>
+			<?php esc_html_e( 'Please enter the URL of the external content.', 'external-content' ); ?>
 		</p>
 		<table class="form-table">
 			<tbody>
 			<tr>
 				<th scope="row">
 					<label for="<?php echo $this->meta_key; ?>">
-						<?php _e( 'External URL', 'external-content' ); ?>
+						<?php esc_html_e( 'External URL', 'external-content' ); ?>
 					</label>
 				</th>
 				<td>
