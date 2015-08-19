@@ -31,7 +31,7 @@ class Autoloader {
 	 */
 	public function add_rule( Rule $rule ) {
 
-		$this->rules[ ] = $rule;
+		$this->rules[] = $rule;
 	}
 
 	/**
