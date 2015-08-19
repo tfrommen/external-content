@@ -24,6 +24,11 @@ class MetaBox {
 	private $nonce;
 
 	/**
+	 * @var string
+	 */
+	private $post_type;
+
+	/**
 	 * Constructor. Set up the properties.
 	 *
 	 * @param Model         $model     Model.
@@ -46,12 +51,12 @@ class MetaBox {
 	 *
 	 * @param string $post_type Post type slug.
 	 *
-	 * @return void
+	 * @return bool
 	 */
 	public function add( $post_type ) {
 
 		if ( $post_type !== $this->post_type ) {
-			return;
+			return FALSE;
 		}
 
 		add_meta_box(
@@ -62,6 +67,8 @@ class MetaBox {
 			'advanced',
 			'high'
 		);
+
+		return TRUE;
 	}
 
 	/**
@@ -95,7 +102,7 @@ class MetaBox {
 			</tr>
 			</tbody>
 		</table>
-	<?php
+		<?php
 	}
 
 }

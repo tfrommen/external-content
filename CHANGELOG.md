@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0
+- Bugfix Nonce method.
+- Refactor some methods to make them better testable.
+- Compatible up to WordPress 4.3.
+
 ## 1.2.1
 - Escape translated strings.
 - Compatible up to WordPress 4.2.4.

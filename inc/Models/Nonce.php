@@ -92,7 +92,7 @@ class Nonce {
 	 */
 	public function print_field( $action = '', $referer = TRUE ) {
 
-		$this->get_field( $action, $this->name, $referer, TRUE );
+		$this->get_field( $action, $referer, TRUE );
 	}
 
 	/**
@@ -114,7 +114,7 @@ class Nonce {
 			$nonce = $_REQUEST[ $this->name ];
 		}
 
-		$action = $action === '' ? $this->action : $action;
+		$action = empty( $action ) ? $this->action : $action;
 
 		return wp_verify_nonce( $nonce, $action );
 	}

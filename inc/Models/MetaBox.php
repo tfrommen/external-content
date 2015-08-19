@@ -17,6 +17,11 @@ class MetaBox {
 	private $meta_key;
 
 	/**
+	 * @var Nonce
+	 */
+	private $nonce;
+
+	/**
 	 * @var string
 	 */
 	private $post_type;
@@ -60,25 +65,33 @@ class MetaBox {
 	 * @param int      $post_id Post ID.
 	 * @param \WP_Post $post    Post object.
 	 *
-	 * @return void
+	 * @return bool
 	 */
 	public function save( $post_id, $post ) {
 
-		if (
-			( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-			|| wp_is_post_revision( $post_id )
-			|| $post->post_type !== $this->post_type
-			|| ! current_user_can( 'edit_post', $post_id )
-		) {
-			return;
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return FALSE;
+		}
+
+		if ( wp_is_post_revision( $post_id ) ) {
+			return FALSE;
+		}
+
+		if ( $post->post_type !== $this->post_type ) {
+			return FALSE;
+		}
+
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return FALSE;
 		}
 
 		if ( ! $this->nonce->is_valid() ) {
-			return;
+			return FALSE;
 		}
 
-		$meta_value = filter_input( INPUT_POST, $this->meta_key );
-		update_post_meta( $post_id, $this->meta_key, $meta_value );
+		$meta_value = isset( $_POST[ $this->meta_key ] ) ? $_POST[ $this->meta_key ] : '';
+
+		return (bool) update_post_meta( $post_id, $this->meta_key, $meta_value );
 	}
 
 }
