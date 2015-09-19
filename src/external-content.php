@@ -11,9 +11,9 @@
  * License:     GPLv3
  */
 
-namespace tfrommne\ExternalContent;
+namespace tfrommen\ExternalContent;
 
-use tfrommne\Autoloader;
+use tfrommen\Autoloader;
 
 if ( ! function_exists( 'add_action' ) ) {
 	return;
