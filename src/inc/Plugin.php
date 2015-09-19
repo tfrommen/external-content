@@ -15,6 +15,11 @@ class Plugin {
 	private $file;
 
 	/**
+	 * @var string
+	 */
+	private $plugin_data;
+
+	/**
 	 * Constructor. Set up the properties.
 	 *
 	 * @param string $file Main plugin file.
@@ -22,6 +27,13 @@ class Plugin {
 	public function __construct( $file ) {
 
 		$this->file = $file;
+
+		$headers = array(
+			'version'     => 'Version',
+			'text_domain' => 'Text Domain',
+			'domain_path' => 'Domain Path',
+		);
+		$this->plugin_data = get_file_data( $file, $headers );
 	}
 
 	/**
@@ -31,7 +43,14 @@ class Plugin {
 	 */
 	public function initialize() {
 
-		$text_domain = new Models\TextDomain( $this->file );
+		$update_controller = new Controllers\Update( $this->plugin_data[ 'version' ] );
+		$update_controller->update();
+
+		$text_domain = new Models\TextDomain(
+			$this->file,
+			$this->plugin_data[ 'text_domain' ],
+			$this->plugin_data[ 'domain_path' ]
+		);
 		$text_domain->load();
 
 		$nonce = new Models\Nonce( 'save_external_url' );
