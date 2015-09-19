@@ -15,11 +15,10 @@ class UpdateControllerTest extends TestCase {
 	 * @param bool   $expected
 	 * @param string $version
 	 * @param string $old_version
-	 * @param int    $times_update_option
 	 *
 	 * @return void
 	 */
-	public function test_update( $expected, $version, $old_version, $times_update_option ) {
+	public function test_update( $expected, $version, $old_version ) {
 
 		$testee = new Testee( $version );
 
@@ -34,16 +33,18 @@ class UpdateControllerTest extends TestCase {
 			)
 		);
 
-		WP_Mock::wpFunction(
-			'update_option',
-			array(
-				'times' => $times_update_option,
-				'args'  => array(
-					Mockery::type( 'string' ),
-					$version,
-				),
-			)
-		);
+		if ( $old_version !== $version ) {
+			WP_Mock::wpFunction(
+				'update_option',
+				array(
+					'times' => 1,
+					'args'  => array(
+						Mockery::type( 'string' ),
+						$version,
+					),
+				)
+			);
+		}
 
 		$this->assertSame( $expected, $testee->update() );
 
@@ -61,22 +62,19 @@ class UpdateControllerTest extends TestCase {
 
 		return array(
 			'no_version'      => array(
-				'expected'            => TRUE,
-				'version'             => $version,
-				'old_version'         => '',
-				'times_update_option' => 1,
+				'expected'    => TRUE,
+				'version'     => $version,
+				'old_version' => '',
 			),
 			'old_version'     => array(
-				'expected'            => TRUE,
-				'version'             => $version,
-				'old_version'         => '0',
-				'times_update_option' => 1,
+				'expected'    => TRUE,
+				'version'     => $version,
+				'old_version' => '0',
 			),
 			'current_version' => array(
-				'expected'            => FALSE,
-				'version'             => $version,
-				'old_version'         => $version,
-				'times_update_option' => 0,
+				'expected'    => FALSE,
+				'version'     => $version,
+				'old_version' => $version,
 			),
 		);
 	}
