@@ -1,6 +1,7 @@
 {
 	"name": "tfrommen/external-content",
 	"description": "This plugin registers a custom post type to handle external content like any other post. The post permalink is replaced by a custom post meta that holds an external URL.",
+	"type": "wordpress-plugin",
 	"keywords": [
 		"content",
 		"external",
@@ -11,14 +12,29 @@
 	"authors": [
 		{
 			"name": "Thorsten Frommen",
-			"email": "tf@ipm-frommen.de",
-			"homepage": "http://ipm-frommen.de/wordpress"
+			"email": "info@tfrommen.de",
+			"homepage": "http://tfrommen.de",
+			"role": "Developer"
 		}
 	],
+	"support": {
+		"issues": "https://github.com/tfrommen/external-content/issues",
+		"forum": "https://wordpress.org/support/plugin/external-content",
+		"source": "https://github.com/tfrommen/external-content"
+	},
 	"require": {
-		"php": ">=5.3.3"
+		"php": ">=5.2.4",
+		"composer/installers": "~1.0"
 	},
 	"require-dev": {
-		"10up/wp_mock": "dev-master"
+		"php": ">=5.3.3",
+		"10up/wp_mock": "dev-master",
+		"mockery/mockery": "~0.9.4",
+		"phpunit/phpunit": "~4.0"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.5.x-dev"
+		}
 	}
 }

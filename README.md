@@ -1,15 +1,25 @@
 # External Content
 
+[![Latest Stable Version](https://poser.pugx.org/tfrommen/external-content/v/stable)](https://packagist.org/packages/tfrommen/external-content)
+[![Project Status](http://opensource.box.com/badges/active.svg)](http://opensource.box.com/badges)
+[![Build Status](https://travis-ci.org/tfrommen/external-content.svg?branch=master)](http://travis-ci.org/tfrommen/external-content)
+[![License](https://poser.pugx.org/tfrommen/external-content/license)](https://packagist.org/packages/tfrommen/external-content)
+
 Have you ever wanted to integrate external content such as a specific post of an external website into your WordPress website? But treat it like any other post? That is, have it appear as teaser or part of a specific (pseudo) archive?
 
 This is exactly when _External Content_ kicks in.
 
 ## Installation
 
-1. [Download ZIP](https://github.com/tfrommen/external-content/archive/master.zip).
+1. [Download ZIP](https://downloads.wordpress.org/plugin/external-content.zip).
 1. Upload contents to the `/wp-content/plugins` directory on your web server.
 1. Activate the plugin through the _Plugins_ menu in WordPress.
 1. Find the new _External Content_ menu in your WordPress backend.
+
+## Screenshots
+
+![Meta box](assets/screenshot-1.png)  
+**Meta box** - Enter an external URL to have the post's permalink be replaced with it.
 
 ## Usage
 
