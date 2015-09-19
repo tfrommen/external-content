@@ -1,15 +1,15 @@
 <?php # -*- coding: utf-8 -*-
 
-use tf\ExternalContent\Controllers\Post as Testee;
+use tfrommen\ExternalContent\Controllers\Post as Testee;
 use WP_Mock\Tools\TestCase;
 
 class PostControllerTest extends TestCase {
 
 	public function test_initialize() {
 
-		$model = Mockery::mock( 'tf\ExternalContent\Models\Post' );
+		$model = Mockery::mock( 'tfrommen\ExternalContent\Models\Post' );
 
-		/** @var tf\ExternalContent\Models\Post $model */
+		/** @var tfrommen\ExternalContent\Models\Post $model */
 		$testee = new Testee( $model );
 
 		WP_Mock::expectFilterAdded( 'post_type_link', array( $model, 'get_external_url' ), 10, 2 );

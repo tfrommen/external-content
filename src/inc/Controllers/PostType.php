@@ -1,13 +1,13 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Controllers;
+namespace tfrommen\ExternalContent\Controllers;
 
-use tf\ExternalContent\Models\PostType as Model;
+use tfrommen\ExternalContent\Models\PostType as Model;
 
 /**
- * Class PostType
+ * Post type controller.
  *
- * @package tf\ExternalContent\Controllers
+ * @package tfrommen\ExternalContent\Controllers
  */
 class PostType {
 

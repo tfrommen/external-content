@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\Autoloader;
+namespace tfrommen\Autoloader;
 
 /**
- * Class Autoloader
+ * Autoloader class.
  *
- * @package tf\Autoloader
+ * @package tfrommen\Autoloader
  */
 class Autoloader {
 

@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Models;
+namespace tfrommen\ExternalContent\Models;
 
 /**
- * Class PostType
+ * Post type model.
  *
- * @package tf\ExternalContent\Models
+ * @package tfrommen\ExternalContent\Models
  */
 class PostType {
 

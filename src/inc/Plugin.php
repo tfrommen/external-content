@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent;
+namespace tfrommen\ExternalContent;
 
 /**
- * Class Plugin
+ * Main controller.
  *
- * @package tf\ExternalContent
+ * @package tfrommen\ExternalContent
  */
 class Plugin {
 

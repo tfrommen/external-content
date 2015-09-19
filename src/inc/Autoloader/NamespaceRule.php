@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\Autoloader;
+namespace tfrommen\Autoloader;
 
 /**
- * Class NamespaceRule
+ * Autoloader rule for (namespaced) directories.
  *
- * @package tf\Autoloader
+ * @package tfrommen\Autoloader
  */
 class NamespaceRule implements Rule {
 
@@ -43,6 +43,7 @@ class NamespaceRule implements Rule {
 	public function autoload( $name ) {
 
 		$namespace = trim( $this->namespace, '\\' );
+
 		$name = ltrim( $name, '\\' );
 
 		if ( strpos( $name, $namespace ) !== 0 ) {
@@ -54,7 +55,6 @@ class NamespaceRule implements Rule {
 
 		$file = $this->dir . DIRECTORY_SEPARATOR . $namepart . '.php';
 		$file = str_replace( '\\', DIRECTORY_SEPARATOR, $file );
-
 		if ( ! is_readable( $file ) ) {
 			return FALSE;
 		}

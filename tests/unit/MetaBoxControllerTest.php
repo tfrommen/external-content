@@ -1,18 +1,18 @@
 <?php # -*- coding: utf-8 -*-
 
-use tf\ExternalContent\Controllers\MetaBox as Testee;
+use tfrommen\ExternalContent\Controllers\MetaBox as Testee;
 use WP_Mock\Tools\TestCase;
 
 class ScriptControllerTest extends TestCase {
 
 	public function test_initialize() {
 
-		$model = Mockery::mock( 'tf\ExternalContent\Models\MetaBox' );
+		$model = Mockery::mock( 'tfrommen\ExternalContent\Models\MetaBox' );
 
-		$view = Mockery::mock( 'tf\ExternalContent\Views\MetaBox' );
+		$view = Mockery::mock( 'tfrommen\ExternalContent\Views\MetaBox' );
 
-		/** @var tf\ExternalContent\Models\MetaBox $model */
-		/** @var tf\ExternalContent\Views\MetaBox $view */
+		/** @var tfrommen\ExternalContent\Models\MetaBox $model */
+		/** @var tfrommen\ExternalContent\Views\MetaBox $view */
 		$testee = new Testee( $model, $view );
 
 		WP_Mock::expectActionAdded( 'add_meta_boxes', array( $view, 'add' ) );

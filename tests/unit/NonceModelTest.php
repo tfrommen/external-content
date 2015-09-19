@@ -1,6 +1,6 @@
 <?php # -*- coding: utf-8 -*-
 
-use tf\ExternalContent\Models\Nonce as Testee;
+use tfrommen\ExternalContent\Models\Nonce as Testee;
 use WP_Mock\Tools\TestCase;
 
 class NonceModelTest extends TestCase {

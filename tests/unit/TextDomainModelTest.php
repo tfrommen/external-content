@@ -1,6 +1,6 @@
 <?php # -*- coding: utf-8 -*-
 
-use tf\ExternalContent\Models\TextDomain as Testee;
+use tfrommen\ExternalContent\Models\TextDomain as Testee;
 use WP_Mock\Tools\TestCase;
 
 class TextDomainModelTest extends TestCase {

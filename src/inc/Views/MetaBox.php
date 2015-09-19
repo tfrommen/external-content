@@ -1,15 +1,15 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Views;
+namespace tfrommen\ExternalContent\Views;
 
-use tf\ExternalContent\Models\MetaBox as Model;
-use tf\ExternalContent\Models\Nonce as NonceModel;
-use tf\ExternalContent\Models\PostType as PostTypeModel;
+use tfrommen\ExternalContent\Models\MetaBox as Model;
+use tfrommen\ExternalContent\Models\Nonce as NonceModel;
+use tfrommen\ExternalContent\Models\PostType as PostTypeModel;
 
 /**
- * Class MetaBox
+ * Meta box view.
  *
- * @package tf\ExternalContent\View
+ * @package tfrommen\ExternalContent\View
  */
 class MetaBox {
 

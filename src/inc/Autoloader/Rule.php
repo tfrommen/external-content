@@ -1,11 +1,11 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\Autoloader;
+namespace tfrommen\Autoloader;
 
 /**
- * Interface Rule
+ * Interface for autoloader rules.
  *
- * @package tf\Autoloader
+ * @package tfrommen\Autoloader
  */
 interface Rule {
 

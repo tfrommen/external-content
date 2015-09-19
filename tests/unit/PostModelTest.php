@@ -1,6 +1,6 @@
 <?php # -*- coding: utf-8 -*-
 
-use tf\ExternalContent\Models\Post as Testee;
+use tfrommen\ExternalContent\Models\Post as Testee;
 use WP_Mock\Tools\TestCase;
 
 class PostModelTest extends TestCase {
@@ -24,16 +24,16 @@ class PostModelTest extends TestCase {
 		$post_meta
 	) {
 
-		$post_type = Mockery::mock( 'tf\ExternalContent\Models\PostType' );
+		$post_type = Mockery::mock( 'tfrommen\ExternalContent\Models\PostType' );
 		$post_type->shouldReceive( 'get_post_type' )
 			->andReturn( 'post_type' );
 
-		$meta_box = Mockery::mock( 'tf\ExternalContent\Models\MetaBox' );
+		$meta_box = Mockery::mock( 'tfrommen\ExternalContent\Models\MetaBox' );
 		$meta_box->shouldReceive( 'get_meta_key' )
 			->andReturn( 'meta_key' );
 
-		/** @var tf\ExternalContent\Models\PostType $post_type */
-		/** @var tf\ExternalContent\Models\MetaBox $meta_box */
+		/** @var tfrommen\ExternalContent\Models\PostType $post_type */
+		/** @var tfrommen\ExternalContent\Models\MetaBox $meta_box */
 		$testee = new Testee( $post_type, $meta_box );
 
 		WP_Mock::onFilter( 'external_content_use_external_url' )
@@ -138,15 +138,15 @@ class PostModelTest extends TestCase {
 		$post
 	) {
 
-		$post_type = Mockery::mock( 'tf\ExternalContent\Models\PostType' );
+		$post_type = Mockery::mock( 'tfrommen\ExternalContent\Models\PostType' );
 		$post_type->shouldReceive( 'get_post_type' )
 			->andReturn( 'post_type' );
 
-		$meta_box = Mockery::mock( 'tf\ExternalContent\Models\MetaBox' );
+		$meta_box = Mockery::mock( 'tfrommen\ExternalContent\Models\MetaBox' );
 		$meta_box->shouldReceive( 'get_meta_key' );
 
-		/** @var tf\ExternalContent\Models\PostType $post_type */
-		/** @var tf\ExternalContent\Models\MetaBox $meta_box */
+		/** @var tfrommen\ExternalContent\Models\PostType $post_type */
+		/** @var tfrommen\ExternalContent\Models\MetaBox $meta_box */
 		$testee = new Testee( $post_type, $meta_box );
 
 		WP_Mock::wpFunction(

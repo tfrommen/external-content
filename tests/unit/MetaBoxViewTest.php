@@ -1,6 +1,6 @@
 <?php # -*- coding: utf-8 -*-
 
-use tf\ExternalContent\Views\MetaBox as Testee;
+use tfrommen\ExternalContent\Views\MetaBox as Testee;
 use WP_Mock\Tools\TestCase;
 
 class MetaBoxViewTest extends TestCase {
@@ -18,18 +18,18 @@ class MetaBoxViewTest extends TestCase {
 		$times
 	) {
 
-		$model = Mockery::mock( 'tf\ExternalContent\Models\MetaBox' );
+		$model = Mockery::mock( 'tfrommen\ExternalContent\Models\MetaBox' );
 		$model->shouldReceive( 'get_meta_key' );
 
-		$post_type = Mockery::mock( 'tf\ExternalContent\Models\PostType' );
+		$post_type = Mockery::mock( 'tfrommen\ExternalContent\Models\PostType' );
 		$post_type->shouldReceive( 'get_post_type' )
 			->andReturn( 'post_type' );
 
-		$nonce = Mockery::mock( 'tf\ExternalContent\Models\Nonce' );
+		$nonce = Mockery::mock( 'tfrommen\ExternalContent\Models\Nonce' );
 
-		/** @var tf\ExternalContent\Models\MetaBox $model */
-		/** @var tf\ExternalContent\Models\PostType $post_type */
-		/** @var tf\ExternalContent\Models\Nonce $nonce */
+		/** @var tfrommen\ExternalContent\Models\MetaBox $model */
+		/** @var tfrommen\ExternalContent\Models\PostType $post_type */
+		/** @var tfrommen\ExternalContent\Models\Nonce $nonce */
 		$testee = new Testee( $model, $post_type, $nonce );
 
 		WP_Mock::wpPassthruFunction(
@@ -88,22 +88,22 @@ class MetaBoxViewTest extends TestCase {
 
 		$meta_key = '_external_content';
 
-		$model = Mockery::mock( 'tf\ExternalContent\Models\MetaBox' );
+		$model = Mockery::mock( 'tfrommen\ExternalContent\Models\MetaBox' );
 		$model->shouldReceive( 'get_meta_key' )
 			->andReturn( $meta_key );
 
 		$post_type_slug = 'external_content';
 
-		$post_type = Mockery::mock( 'tf\ExternalContent\Models\PostType' );
+		$post_type = Mockery::mock( 'tfrommen\ExternalContent\Models\PostType' );
 		$post_type->shouldReceive( 'get_post_type' )
 			->andReturn( $post_type_slug );
 
-		$nonce = Mockery::mock( 'tf\ExternalContent\Models\Nonce' );
+		$nonce = Mockery::mock( 'tfrommen\ExternalContent\Models\Nonce' );
 		$nonce->shouldReceive( 'print_field' );
 
-		/** @var tf\ExternalContent\Models\MetaBox $model */
-		/** @var tf\ExternalContent\Models\PostType $post_type */
-		/** @var tf\ExternalContent\Models\Nonce $nonce */
+		/** @var tfrommen\ExternalContent\Models\MetaBox $model */
+		/** @var tfrommen\ExternalContent\Models\PostType $post_type */
+		/** @var tfrommen\ExternalContent\Models\Nonce $nonce */
 		$testee = new Testee( $model, $post_type, $nonce );
 
 		$meta_value = 'http://example.com';

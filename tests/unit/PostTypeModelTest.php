@@ -1,6 +1,6 @@
 <?php # -*- coding: utf-8 -*-
 
-use tf\ExternalContent\Models\PostType as Testee;
+use tfrommen\ExternalContent\Models\PostType as Testee;
 use WP_Mock\Tools\TestCase;
 
 class PostTypeModelTest extends TestCase {

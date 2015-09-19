@@ -1,13 +1,13 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Controllers;
+namespace tfrommen\ExternalContent\Controllers;
 
-use tf\ExternalContent\Models\Post as Model;
+use tfrommen\ExternalContent\Models\Post as Model;
 
 /**
- * Class Post
+ * Post controller.
  *
- * @package tf\ExternalContent\Controllers
+ * @package tfrommen\ExternalContent\Controllers
  */
 class Post {
 
@@ -34,6 +34,7 @@ class Post {
 	public function initialize() {
 
 		add_filter( 'post_type_link', array( $this->model, 'get_external_url' ), 10, 2 );
+
 		add_filter( 'pre_get_shortlink', array( $this->model, 'get_shortlink' ), 10, 3 );
 	}
 

@@ -1,6 +1,6 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\Autoloader;
+namespace tfrommen\Autoloader;
 
 foreach ( array( 'Autoloader', 'Rule', 'NamespaceRule' ) as $name ) {
 	$fqn = __NAMESPACE__ . '\\' . $name;

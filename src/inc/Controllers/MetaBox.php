@@ -1,14 +1,14 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Controllers;
+namespace tfrommen\ExternalContent\Controllers;
 
-use tf\ExternalContent\Models\MetaBox as Model;
-use tf\ExternalContent\Views\MetaBox as View;
+use tfrommen\ExternalContent\Models\MetaBox as Model;
+use tfrommen\ExternalContent\Views\MetaBox as View;
 
 /**
- * Class MetaBox
+ * Meta box controller
  *
- * @package tf\ExternalContent\Controllers
+ * @package tfrommen\ExternalContent\Controllers
  */
 class MetaBox {
 
@@ -43,6 +43,7 @@ class MetaBox {
 	public function initialize() {
 
 		add_action( 'add_meta_boxes', array( $this->view, 'add' ) );
+
 		add_action( 'save_post', array( $this->model, 'save' ), 10, 2 );
 	}
 

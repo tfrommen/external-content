@@ -8,5 +8,5 @@ $inc_dir = "$parent_dir/src/inc/";
 
 require_once $inc_dir . 'Autoloader/bootstrap.php';
 
-$autoloader = new tf\Autoloader\Autoloader();
-$autoloader->add_rule( new tf\Autoloader\NamespaceRule( $inc_dir, 'tf\ExternalContent' ) );
+$autoloader = new tfrommen\Autoloader\Autoloader();
+$autoloader->add_rule( new tfrommen\Autoloader\NamespaceRule( $inc_dir, 'tfrommen\ExternalContent' ) );

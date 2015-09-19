@@ -1,6 +1,6 @@
 <?php # -*- coding: utf-8 -*-
 
-use tf\ExternalContent\Models\MetaBox as Testee;
+use tfrommen\ExternalContent\Models\MetaBox as Testee;
 use WP_Mock\Tools\TestCase;
 
 class MetaBoxModelTest extends TestCase {
@@ -26,11 +26,11 @@ class MetaBoxModelTest extends TestCase {
 		$update_times
 	) {
 
-		$post_type = Mockery::mock( 'tf\ExternalContent\Models\PostType' );
+		$post_type = Mockery::mock( 'tfrommen\ExternalContent\Models\PostType' );
 		$post_type->shouldReceive( 'get_post_type' )
 			->andReturn( 'post_type' );
 
-		$nonce = Mockery::mock( 'tf\ExternalContent\Models\Nonce' );
+		$nonce = Mockery::mock( 'tfrommen\ExternalContent\Models\Nonce' );
 		$nonce->shouldReceive( 'is_valid' )
 			->andReturn( $is_nonce_valid );
 
@@ -50,8 +50,8 @@ class MetaBoxModelTest extends TestCase {
 			)
 		);
 
-		/** @var tf\ExternalContent\Models\PostType $post_type */
-		/** @var tf\ExternalContent\Models\Nonce $nonce */
+		/** @var tfrommen\ExternalContent\Models\PostType $post_type */
+		/** @var tfrommen\ExternalContent\Models\Nonce $nonce */
 		$testee = new Testee( $post_type, $nonce );
 
 		WP_Mock::wpFunction(

@@ -1,13 +1,13 @@
 <?php # -*- coding: utf-8 -*-
 
-namespace tf\ExternalContent\Models;
+namespace tfrommen\ExternalContent\Models;
 
-use tf\ExternalContent\Views;
+use tfrommen\ExternalContent\Views;
 
 /**
- * Class MetaBox
+ * Meta box model.
  *
- * @package tf\ExternalContent\Models
+ * @package tfrommen\ExternalContent\Models
  */
 class MetaBox {
 
