@@ -29,7 +29,7 @@ class Nonce {
 
 		$this->action = $action;
 
-		$this->name = empty( $name ) ? $action . '_nonce' : $name;
+		$this->name = empty( $name ) ? "{$action}_nonce" : $name;
 	}
 
 	/**
