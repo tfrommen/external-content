@@ -24,7 +24,7 @@ WHERE post_type = %s
 LIMIT 500";
 $post_type = new Models\PostType();
 $query = $wpdb->prepare( $query, $post_type->get_post_type() );
-while ( $post_ids = $wpdb->get_row( $query, ARRAY_N ) ) {
+while ( $post_ids = $wpdb->get_col( $query ) ) {
 	foreach ( $post_ids as $post_id ) {
 		wp_delete_post( $post_id, TRUE );
 	}

@@ -1,6 +1,6 @@
 {
 	"name": "external-content",
-	"version": "1.4.1",
+	"version": "1.4.2",
 	"description": "This plugin registers a custom post type to handle external content like any other post. The post permalink is replaced by a custom post meta that holds an external URL.",
 	"keywords": [
 		"content",
