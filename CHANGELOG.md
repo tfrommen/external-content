@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1
+* Compatible up to WordPress 4.4.
+* Fix uninstall bug.
+
 ## 1.4.0
 * Compatible up to WordPress 4.3.1.
 

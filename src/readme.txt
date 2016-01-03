@@ -2,7 +2,7 @@
 Contributors: tfrommen
 Tags: content, external, url
 Requires at least: 2.9.0
-Tested up to: 4.3.1
+Tested up to: 4.4
 Stable tag: trunk
 
 This plugin registers a custom post type to handle external content like any other post. The post permalink is replaced by a custom post meta that holds an external URL.
@@ -166,6 +166,10 @@ This plugin requires PHP 5.3.
 1. **Meta box** - Enter an external URL to have the post's permalink be replaced with it.
 
 == Changelog ==
+
+= 1.4.1 =
+* Compatible up to WordPress 4.4.
+* Fix uninstall bug.
 
 = 1.4.0 =
 * Compatible up to WordPress 4.3.1.
